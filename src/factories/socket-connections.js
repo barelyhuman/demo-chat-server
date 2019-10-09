@@ -1,16 +1,17 @@
 'use strict';
 
 module.exports = function () {
-    this.connections = {};
+    const connections = {};
 
-    const addConnection = (identifier, socket) => {
-        this.connections[identifier] = socket;
+    const vm = {};
+
+    vm.addConnection = (identifier, socket) => {
+        connections[identifier] = socket;
     }
 
-    const getConnection = (identifier) => {
-        return this.connections[identifier];
+    vm.getConnection = (identifier) => {
+        return connections[identifier];
     }
 
-    this.addConnection = addConnection;
-    this.getConnection = getConnection;
+    return vm;
 };
