@@ -19,8 +19,8 @@ socketIO.on('connection', function (socket) {
     if (socket
         && socket.handshake
         && socket.handshake.query
-        && socket.handshake.query.username) {
-        socketStorage.addConnection(socket.handshake.query.username, socket);
+        && socket.handshake.query.userId) {
+        socketStorage.addConnection(socket.handshake.query.userId, socket);
     }
 });
 
